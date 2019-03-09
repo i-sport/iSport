@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 from ..users.models import User
+from .models import Event, Message
 
 
 def index(request):
@@ -15,8 +16,10 @@ def dashboard(request):
     user_id = request.session['id']
 
     user = User.objects.get(id=user_id)
+    events = Event.objects.all()
     context = {
-        "user": user
+        "user": user,
+        "events": events
     }
     return render(request,'events/dashboard.html', context)
 
