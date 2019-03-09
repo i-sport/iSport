@@ -47,12 +47,16 @@ def login(request):
 
 def success(request):
     if 'id' in request.session.keys():
-        return redirect('sports:dashboard')
+        return redirect('events:dashboard')
     else:
         return redirect('users:index')
 
    
-    
 def logout(request):
     request.session.clear()
     return redirect('users:index')
+
+
+def account(request, user_id):
+    print("USER ID: ", user_id)
+    return render(request, 'users/account.html')

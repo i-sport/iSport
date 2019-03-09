@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.users',
-    'apps.sports',
+    'apps.events',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
